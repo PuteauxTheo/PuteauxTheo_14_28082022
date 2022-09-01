@@ -15,7 +15,7 @@ root.render(
             <Router>
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
-                    <Route path="employee-list" element={<Employee />}></Route>
+                    <Route path="employeeList" element={<Employee />}></Route>
                 </Routes>
             </Router>
         </React.StrictMode>
