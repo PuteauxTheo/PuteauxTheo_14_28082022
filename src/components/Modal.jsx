@@ -23,7 +23,7 @@ export default function BasicModal() {
 
     return (
         <div>
-            <Button onClick={handleOpen}>Save</Button>
+            <Button onClick={handleOpen} >Save</Button>
             <Modal
                 open={open}
                 onClose={handleClose}
