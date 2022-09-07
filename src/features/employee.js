@@ -10,32 +10,41 @@ const initialState = {
 
 export function submitForm() {
     return async (dispatch, getState) => {
-
+        const dataEmployee = selectEmployee(getState()).dataEmployee
+        dispatch(actions.submitForm(dataEmployee))
     }
 }
 
-export function isCorrect() {
+// export function isCorrect() {
+//     return async (dispatch, getState) => {
+
+//     }
+// }
+
+
+export function unvalidForm() {
     return async (dispatch, getState) => {
-        
-    }
-}
+        const isValidForm = selectEmployee(getState()).isValidForm
 
-
-export function unvalideForm() {
-    return async (dispatch, getState) => {
-
+        if(isValidForm){
+            dispatch(actions.unvalidForm())
+        }
     }
 }
 
 export function validForm() {
     return async (dispatch, getState) => {
+        const isValidForm = selectEmployee(getState()).isValidForm
 
+        if(!isValidForm){
+            dispatch(actions.validForm())
+        }
     }
 }
 
 export function resetForm() {
-    return async (dispatch, getState) => {
-
+    return async (dispatch) => {
+        dispatch(actions.reset())
     }
 }
 // reducer
@@ -55,6 +64,9 @@ const { actions, reducer } = createSlice({
             draft.dataEmployee = action.payload
             draft.isValidForm = true
         },
+        reset: () => {
+            return initialState;
+        }
     }
 });
 
