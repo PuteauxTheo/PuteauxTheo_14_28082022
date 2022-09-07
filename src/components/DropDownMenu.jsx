@@ -14,6 +14,7 @@ export default function DropDownMenu({ title, data }) {
           id="combo-box-demo"
           options={data}
           sx={{ width: 300 }}
+          defaultValue={data[0]}
           renderInput={(params) => <TextField {...params} label={title} />}
         />
       </Box>
