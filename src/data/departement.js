@@ -1,1 +1,0 @@
-export const departement = ["Sales", "Marketing", "Engineering", "Human Resources", "Legal"]

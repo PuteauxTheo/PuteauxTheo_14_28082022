@@ -1,25 +1,34 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import { useDispatch } from "react-redux";
+import { submitForm, unvalidForm, validForm} from "../features/employee.js"
 import { employees } from "../data/data"
 import DatePicker from "../components/DatePicker"
 import DropDownMenu from "../components/DropDownMenu"
-import BasicModal from "../components/Modal"
 import { states } from "../data/states"
-import { departement } from "../data/departement"
+import { departmentData } from "../data/department"
+import ReactModal from "react-modal";
+
+ReactModal.setAppElement('#root');
 
 export default function Home() {
 
     localStorage.setItem("Employees",employees)
+    
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [birthDate, setBirthDate] = useState(new Date())
     const [startDate, setStartDate] = useState(new Date())
     const [street, setStreet] = useState('')
     const [city, setCity] = useState('')
-    const [state, setState] = useState('')
-    const [zipCode, setZipCode] = useState()
-    const [department, setDepartment] = useState('')
+    const [state, setState] = useState(states[0].name)
+    const [zipCode, setZipCode] = useState('')
+    const [department, setDepartment] = useState(departmentData[0])
 
+    const dispatch = useDispatch()
+
+    const [open, setOpen] = useState(false);
+    console.log("open ? "+open)
     const formatDate = (inputDate) => {
         let date, month, year;
       
@@ -51,29 +60,61 @@ export default function Home() {
 
     const statesName = filterStates(states)
 
-    const saveEmployee = () => {
-        const employees = localStorage.getItem("Employees")
+    const newEmployee = {
+        
+        'idEmployee': employees.length,
+        'firstName': firstName.value,
+        'lastName': lastName.value,
+        'dateOfBirth': formatDate(birthDate),
+        'startDate': formatDate(startDate),
+        'department': department.value,
+        'street': street.value,
+        'city': city.value,
+        'state': state.value,
+        'zipCode': zipCode.value
+    };
 
-        checkForm();
+    const saveEmployee = async (e) => {
+        //const employees = JSON.parse(localStorage.getItem("Employees"))
+        console.log("Employee "+employees)
+        e.preventDefault();
+        // checkForm();
+
+        // const submit = dispatch(submitForm(newEmployee))
+
+        // if(submit){
+        //     if(employees === null){
+        //         localStorage.setItem("Employees", employees)
+        //     }
+
+        //     if(employees){
+        //         employees.push(newEmployee)
+        //         localStorage.setItem("Employees", JSON.stringify(employees))
+        //     }
+        // }
+
+        setOpen(true)
     }
 
-    // const employee = {
-    //     firstName: firstName.value,
-    //     lastName: lastName.value,
-    //     dateOfBirth: formatDate(birthDate),
-    //     startDate: formatDate(startDate),
-    //     department: department.value,
-    //     street: street.value,
-    //     city: city.value,
-    //     state: state.value,
-    //     zipCode: zipCode.value
-    // };
 
     const checkForm = () => {
-
+        if((firstName === '') || (lastName === '')){
+            dispatch(unvalidForm())
+        }else{
+            dispatch(validForm())
+        }
     }
-    
 
+    const resetForm = () => {
+        document.getElementById("form").reset()
+    }
+
+    const openModal = () => {
+        setOpen(true)
+    } 
+    const closeModal = () => {
+        setOpen(false)
+    } 
     return (
         <div>
             <div className="title">
@@ -89,30 +130,38 @@ export default function Home() {
                     <label htmlFor="last-name">Last Name</label>
                     <input type="text" id="last-name" onChange={e => setLastName(e.target.value)} />
 
-                    <DatePicker titleDatePicker="Date of Birth" setValue={setBirthDate} value={birthDate}/>
+                    <DatePicker titleDatePicker="Date of Birth" setValue={setBirthDate} />
 
-                    <DatePicker titleDatePicker="Start Date" setValue={setStartDate} value={startDate}/>
+                    <DatePicker titleDatePicker="Start Date" setValue={setStartDate} />
 
                     <fieldset className="address">
                         <legend>Address</legend>
 
                         <label htmlFor="street">Street</label>
-                        <input id="street" type="text" onChange={e => setStreet(e.value)} />
+                        <input id="street" type="text" onChange={e => setStreet(e.target.value)} />
 
                         <label htmlFor="city">City</label>
-                        <input id="city" type="text" onChange={e => setCity(e.value)} />
+                        <input id="city" type="text" onChange={e => setCity(e.target.value)} />
 
-                        <DropDownMenu title="State" data={statesName} />
+                        <DropDownMenu title="State" data={statesName} setValue={setState} value={state}/>
 
                         <label htmlFor="zip-code">Zip Code</label>
-                        <input id="zip-code" type="number" onChange={e => setZipCode(e.value)} />
+                        <input id="zip-code" type="number" onChange={e => setZipCode(e.target.value)} />
                     </fieldset>
 
-                    <DropDownMenu title="Departement" data={departement} />
-                </form>
+                    <DropDownMenu title="Departement" data={departmentData} setValue={setDepartment} value={department}/>
 
-                <BasicModal />
+                    <button onClick={saveEmployee} >Save</button>
+                    
+                </form>
             </div>
+            <ReactModal
+                isOpen={open}
+                contentLabel="Employee Created!"
+                onRequestClose={resetForm}>
+                <div>Employee Created!</div>
+                <button onClick={closeModal}>close</button>
+            </ReactModal>
         </div>
     )
 }
