@@ -33,5 +33,3 @@ export const employees = [
         zipCode: "72000"
     }
 ]
-
-localStorage.setItem("Employees",employees)
