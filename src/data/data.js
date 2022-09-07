@@ -1,5 +1,6 @@
 export const employees = [
     {
+        id: 0,
         firstName: "Theo",
         lastName: "Puteaux",
         dateOfBirth: "06/18/2000",
@@ -11,6 +12,7 @@ export const employees = [
         zipCode: "44000"
     },
     {
+        id: 1,
         firstName: "Armand",
         lastName: "Thierry",
         dateOfBirth: "02/09/1998",
@@ -22,6 +24,7 @@ export const employees = [
         zipCode: "75000"
     },
     {
+        id: 2,
         firstName: "Theo",
         lastName: "Puteaux",
         dateOfBirth: "11/18/1987",
