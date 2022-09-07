@@ -1,7 +1,10 @@
-import * as React from "react"
-import TextField from '@mui/material/TextField'
+import * as React from "react";
+import TextField from '@mui/material/TextField';
 
-export default function DatePicker( { titleDatePicker }) {
+
+export default function DatePicker( { titleDatePicker, setValue }) {
+
+
     return (
         <div style={{ margin: 'auto', display: 'block', width: 'fit-content' }}>
             <h3>{titleDatePicker}</h3>
@@ -10,7 +13,12 @@ export default function DatePicker( { titleDatePicker }) {
                 type="date"
                 defaultValue=""
                 InputLabelProps={{ shrink: true, }}
+                onChange={ e => {
+                    const d = new Date(e.target.value);
+                    setValue(d)
+                }}
             />
+            
         </div>
     );
 }
