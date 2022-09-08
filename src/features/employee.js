@@ -9,15 +9,6 @@ const initialState = {
 // action
 
 
-
-// export function isFormCorrect() {
-//     return async (dispatch, getState) => {
-//         const isValidForm = selectEmployee(getState()).isValidForm
-//         return isValidForm
-//     }
-// }
-
-
 export function unvalidForm() {
     return async (dispatch) => {
         dispatch(actions.unvalidForm())
