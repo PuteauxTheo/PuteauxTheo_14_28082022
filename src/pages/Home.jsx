@@ -13,7 +13,8 @@ ReactModal.setAppElement('#root');
 
 export default function Home() {
 
-    localStorage.setItem("Employees",employees)
+
+    //localStorage.setItem("Employees",JSON.stringify(employees))
     
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -28,7 +29,7 @@ export default function Home() {
     const dispatch = useDispatch()
 
     const [open, setOpen] = useState(false);
-    console.log("open ? "+open)
+    
     const formatDate = (inputDate) => {
         let date, month, year;
       
@@ -63,35 +64,38 @@ export default function Home() {
     const newEmployee = {
         
         'idEmployee': employees.length,
-        'firstName': firstName.value,
-        'lastName': lastName.value,
+        'firstName': firstName,
+        'lastName': lastName,
         'dateOfBirth': formatDate(birthDate),
         'startDate': formatDate(startDate),
-        'department': department.value,
-        'street': street.value,
-        'city': city.value,
-        'state': state.value,
-        'zipCode': zipCode.value
+        'department': department,
+        'street': street,
+        'city': city,
+        'state': state,
+        'zipCode': zipCode
     };
 
     const saveEmployee = async (e) => {
-        //const employees = JSON.parse(localStorage.getItem("Employees"))
-        console.log("Employee "+employees)
         e.preventDefault();
-        // checkForm();
+        checkForm();
 
-        // const submit = dispatch(submitForm(newEmployee))
+        const submit = await dispatch(submitForm(newEmployee))
 
-        // if(submit){
-        //     if(employees === null){
-        //         localStorage.setItem("Employees", employees)
-        //     }
+        if(submit){
 
-        //     if(employees){
-        //         employees.push(newEmployee)
-        //         localStorage.setItem("Employees", JSON.stringify(employees))
-        //     }
-        // }
+            if(localStorage.getItem("Employees") === null){
+                console.log(" Je suis pas ici ")
+                localStorage.setItem("Employees", JSON.stringify([]) )
+            }
+
+            const employeesData = JSON.parse(localStorage.getItem("Employees"))
+            employeesData.push(newEmployee)
+            localStorage.setItem("Employees", JSON.stringify(employeesData))
+            
+            
+        }else{
+            return false
+        }
 
         setOpen(true)
     }
@@ -99,20 +103,15 @@ export default function Home() {
 
     const checkForm = () => {
         if((firstName === '') || (lastName === '')){
+            console.log("Invalid field ")
             dispatch(unvalidForm())
         }else{
             dispatch(validForm())
         }
     }
 
-    const resetForm = () => {
-        document.getElementById("form").reset()
-    }
-
-    const openModal = () => {
-        setOpen(true)
-    } 
     const closeModal = () => {
+        document.getElementById("create-employee").reset()
         setOpen(false)
     } 
     return (
@@ -157,8 +156,8 @@ export default function Home() {
             </div>
             <ReactModal
                 isOpen={open}
-                contentLabel="Employee Created!"
-                onRequestClose={resetForm}>
+                contentLabel="Employee Created !"
+                onRequestClose={closeModal}>
                 <div>Employee Created!</div>
                 <button onClick={closeModal}>close</button>
             </ReactModal>
