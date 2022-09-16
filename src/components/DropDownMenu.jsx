@@ -13,14 +13,7 @@ export default function DropDownMenu({ title, data, setValue, value}) {
         <Autocomplete
           value={value}
           onChange={(event, newValue) => {
-            // console.log(" value de newValue "+newValue)
-            // if(newValue === 'null'){
-            //   setValue()
-            // }else{
-            //   setValue(newValue)
-            // }
-            setValue(newValue)
-            
+            setValue(newValue)            
           }}
           id="controllable-states-demo"
           options={data}
