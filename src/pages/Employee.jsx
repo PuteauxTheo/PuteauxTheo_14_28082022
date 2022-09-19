@@ -1,5 +1,6 @@
+import React from 'react';
 import { Link } from "react-router-dom"
-import DataTable from "data-table-plugin-react/DataTables/index.js"
+import DataTable from "data-table-react-plugin"
 import { exempleLabels } from "../data/data"
 import { employees } from "../data/data"
 export default function Employee() {
