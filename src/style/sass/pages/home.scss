@@ -1,19 +1,66 @@
 .home{
     max-width: 1200px;
+    margin: auto;
+    border: 2px solid $green;
+}
+
+.title{
+    background-color: $green;
+    color: rgb(202, 211, 173);
+    h1{
+        font-family: 'Riffic Free Bold';
+        letter-spacing: 2px;
+        font-size: 64px;
+        margin: auto 0px;
+    }
+
 }
 
 .logo-header{
-    display: block;
+    display: flex;
+    margin: 15px 0;
+    
     img{
-        height: 150px;
+        height: 125px;
         width: auto;
+        border-radius: 50%;
+        border: 3px solid $greenyellow
     }
+}
+
+.link-employeeList{
+    font-weight: bold;
+    color: #fff;
+    margin: 20px 0;    
+    background-color: $green;
+    border: 1px solid $greenyellow;    
+    border-radius: 5px;
+    .employee-button{
+        margin: 10px;
+    }
+}
+
+.link-employeeList:hover{
+    color: #000;
+    background-color: $greenyellow;
+    border: 1px solid $green;
+    transition: all 0.5s ease-in-out;
+}
+
+.title-form {
+    color: $green;
+    font-family: 'Riffic Free Bold';
+    letter-spacing: 2px;
+    font-size: 28px;
+    margin: auto 0px;
+    text-transform: uppercase;
 }
 
 .address{
     background: $green;
     border: 2px solid $greenyellow;
     color: white;
+    margin: 25px 0;
     .legend{
         padding: 5px;
         background: $green;

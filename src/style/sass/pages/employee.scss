@@ -1,3 +1,23 @@
 .employee{
     max-width: 1200px;
+    margin: auto;
+}
+
+.link-employeeList{
+    font-weight: bold;
+    color: #fff;
+    margin: 20px 0;    
+    background-color: $green;
+    border: 1px solid $greenyellow;    
+    border-radius: 5px;
+    .employee-button{
+        margin: 10px;
+    }
+}
+
+.link-employeeList:hover{
+    color: #000;
+    background-color: $greenyellow;
+    border: 1px solid $green;
+    transition: all 0.5s ease-in-out;
 }

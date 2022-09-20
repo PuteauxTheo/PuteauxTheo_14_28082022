@@ -1,10 +1,21 @@
-$green: rgb(102,139,0);
-$greenyellow: rgb(137,180,0);
+$green: rgb(102, 139, 0);
+$greenyellow: rgb(137, 180, 0);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-html{
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: 'Riffic Free Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/src/fonts/RifficFree-Bold.woff') format('woff');
+}
+html {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    background: rgba($green, .2);
+}
+
+body{
+    margin: 0;
 }
 
 .title {
@@ -26,7 +37,7 @@ label {
     z-index: 0;
 }
 
-.address {
-    margin-top: 10px;
-
+a{
+    text-decoration: none;
+    color: inherit;
 }

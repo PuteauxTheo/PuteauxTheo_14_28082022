@@ -1,7 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@font-face {
+  font-family: "Riffic Free Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/src/fonts/RifficFree-Bold.woff") format("woff");
+}
 html {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+  background: rgba(102, 139, 0, 0.2);
+}
+
+body {
+  margin: 0;
 }
 
 .title {
@@ -22,26 +33,72 @@ label {
   z-index: 0;
 }
 
-.address {
-  margin-top: 10px;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .home {
   max-width: 1200px;
+  margin: auto;
+  border: 2px solid rgb(102, 139, 0);
+}
+
+.title {
+  background-color: rgb(102, 139, 0);
+  color: rgb(202, 211, 173);
+}
+.title h1 {
+  font-family: "Riffic Free Bold";
+  letter-spacing: 2px;
+  font-size: 64px;
+  margin: auto 0px;
 }
 
 .logo-header {
-  display: block;
+  display: flex;
+  margin: 15px 0;
 }
 .logo-header img {
-  height: 150px;
+  height: 125px;
   width: auto;
+  border-radius: 50%;
+  border: 3px solid rgb(137, 180, 0);
+}
+
+.link-employeeList {
+  font-weight: bold;
+  color: #fff;
+  margin: 20px 0;
+  background-color: rgb(102, 139, 0);
+  border: 1px solid rgb(137, 180, 0);
+  border-radius: 5px;
+}
+.link-employeeList .employee-button {
+  margin: 10px;
+}
+
+.link-employeeList:hover {
+  color: #000;
+  background-color: rgb(137, 180, 0);
+  border: 1px solid rgb(102, 139, 0);
+  transition: all 0.5s ease-in-out;
+}
+
+.title-form {
+  color: rgb(102, 139, 0);
+  font-family: "Riffic Free Bold";
+  letter-spacing: 2px;
+  font-size: 28px;
+  margin: auto 0px;
+  text-transform: uppercase;
 }
 
 .address {
   background: rgb(102, 139, 0);
   border: 2px solid rgb(137, 180, 0);
   color: white;
+  margin: 25px 0;
 }
 .address .legend {
   padding: 5px;
@@ -98,6 +155,26 @@ label {
 
 .employee {
   max-width: 1200px;
+  margin: auto;
+}
+
+.link-employeeList {
+  font-weight: bold;
+  color: #fff;
+  margin: 20px 0;
+  background-color: rgb(102, 139, 0);
+  border: 1px solid rgb(137, 180, 0);
+  border-radius: 5px;
+}
+.link-employeeList .employee-button {
+  margin: 10px;
+}
+
+.link-employeeList:hover {
+  color: #000;
+  background-color: rgb(137, 180, 0);
+  border: 1px solid rgb(102, 139, 0);
+  transition: all 0.5s ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */
