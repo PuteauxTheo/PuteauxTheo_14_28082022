@@ -7,7 +7,7 @@ export default function DatePicker( { titleDatePicker, setValue }) {
 
     return (
         <div style={{ margin: 'auto', display: 'block', width: 'fit-content' }}>
-            <h3>{titleDatePicker}</h3>
+            <h3 className="title-input-form">{titleDatePicker}</h3>
             <TextField
                 id="date"
                 type="date"

@@ -1,0 +1,74 @@
+.home{
+    max-width: 1200px;
+}
+
+.logo-header{
+    display: block;
+    img{
+        height: 150px;
+        width: auto;
+    }
+}
+
+.address{
+    background: $green;
+    border: 2px solid $greenyellow;
+    color: white;
+    .legend{
+        padding: 5px;
+        background: $green;
+        border: 2px solid $greenyellow;
+    }
+}
+
+
+.input-employee-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 275px;
+    margin: auto;
+    label{
+        text-align: center;
+        margin: 15px auto;
+        font-weight: bold;  
+        font-size: 1.17em;      
+    }
+    input{
+        width: 150px;
+        margin: auto;
+        height: 25px;
+        
+    }
+    .last{
+        margin-bottom: 20px;
+    }
+}
+
+.title-input-form{
+    text-align: center;
+    margin: 15px auto;
+}
+
+
+.button-save{
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    
+    button{
+        background-color: $green;
+        width: 80px;
+        height: 35px;
+        border: 1px solid $greenyellow;
+        border-radius: 5px;
+        color: #fff;
+    }
+
+    button:hover{
+        background-color: $greenyellow;
+        border: 1px solid $green;
+        transition: all 0.5s ease-in-out;
+        color: #000;
+    }
+}

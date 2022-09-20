@@ -3,12 +3,12 @@ import Box from '@mui/material/Box';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 
-export default function DropDownMenu({ title, data, setValue, value}) {
+export default function DropDownMenu({ title, data, setValue, value, colorInput}) {
 
 
   return (
     <div>
-      <h3>{title}</h3>
+      <h3 className='title-input-form states'>{title}</h3>
       <Box sx={{ minWidth: 120 }}>
         <Autocomplete
           value={value}
@@ -17,9 +17,10 @@ export default function DropDownMenu({ title, data, setValue, value}) {
           }}
           id="controllable-states-demo"
           options={data}
-          sx={{ width: 300 }}
+          style={{margin:"auto"}}
+          sx={{ maxWidth: 250}}
           defaultValue=""
-          renderInput={(params) => <TextField {...params} label={title} />}
+          renderInput={(params) => <TextField {...params} label={title} InputLabelProps={{ style: { color: colorInput }}} sx={{ input: { color:  colorInput} }} />}
           
         />
       </Box>

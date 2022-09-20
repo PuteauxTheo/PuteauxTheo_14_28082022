@@ -1,7 +1,13 @@
+html {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .title {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .container {
@@ -13,12 +19,85 @@
 
 label {
   display: block;
-  margin-bottom: 10px;
   z-index: 0;
 }
 
 .address {
   margin-top: 10px;
+}
+
+.home {
+  max-width: 1200px;
+}
+
+.logo-header {
+  display: block;
+}
+.logo-header img {
+  height: 150px;
+  width: auto;
+}
+
+.address {
+  background: rgb(102, 139, 0);
+  border: 2px solid rgb(137, 180, 0);
+  color: white;
+}
+.address .legend {
+  padding: 5px;
+  background: rgb(102, 139, 0);
+  border: 2px solid rgb(137, 180, 0);
+}
+
+.input-employee-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 275px;
+  margin: auto;
+}
+.input-employee-form label {
+  text-align: center;
+  margin: 15px auto;
+  font-weight: bold;
+  font-size: 1.17em;
+}
+.input-employee-form input {
+  width: 150px;
+  margin: auto;
+  height: 25px;
+}
+.input-employee-form .last {
+  margin-bottom: 20px;
+}
+
+.title-input-form {
+  text-align: center;
+  margin: 15px auto;
+}
+
+.button-save {
+  display: flex;
+  justify-content: center;
+  margin: 15px auto;
+}
+.button-save button {
+  background-color: rgb(102, 139, 0);
+  width: 80px;
+  height: 35px;
+  border: 1px solid rgb(137, 180, 0);
+  border-radius: 5px;
+  color: #fff;
+}
+.button-save button:hover {
+  background-color: rgb(137, 180, 0);
+  border: 1px solid rgb(102, 139, 0);
+  transition: all 0.5s ease-in-out;
+  color: #000;
+}
+
+.employee {
+  max-width: 1200px;
 }
 
 /*# sourceMappingURL=style.css.map */

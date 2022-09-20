@@ -1,7 +1,16 @@
+$green: rgb(102,139,0);
+$greenyellow: rgb(137,180,0);
+
+html{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 .title {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 
@@ -14,10 +23,10 @@
 
 label {
     display: block;
-    margin-bottom: 10px;
     z-index: 0;
 }
 
 .address {
     margin-top: 10px;
+
 }
