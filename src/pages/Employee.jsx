@@ -6,13 +6,21 @@ import { exempleLabels } from "../data/data"
 export default function Employee() {
 
     const employees = JSON.parse(localStorage.getItem("Employees"))
+    console.log(" Taille employes"+employees)
 
     return (
         <div className='employee'>
             <div id="employee-div" className="container">
                 <h1>Current Employees</h1>
-                <DataTable labels={exempleLabels} data={employees}/>
-                <Link to="/" >Home</Link>
+                {
+                    employees ?  <DataTable labels={exempleLabels} data={employees}/> : <span>You need to create Employee to see the table</span>
+                }
+                
+                <Link to="/" >
+                    <div className="link-employeeList">
+                        <p className="employee-button">Home</p>
+                    </div>
+                </Link>
             </div>
         </div>
     )
