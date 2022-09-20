@@ -22,6 +22,7 @@
     "yarn": "^1.22.19"
   },
   "scripts": {
+    "sass": "sass --watch ./src/style/sass/main.scss:./src/style/css/style.css",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
