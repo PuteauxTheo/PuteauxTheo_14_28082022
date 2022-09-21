@@ -1,6 +1,14 @@
 .employee{
     max-width: 1200px;
     margin: auto;
+    .container{
+        h1{
+            font-family: 'Riffic Free Bold';
+            letter-spacing: 2px;
+            font-size: 32px;
+            color: $green;
+        }
+    }
 }
 
 .link-employeeList{
@@ -21,3 +29,5 @@
     border: 1px solid $green;
     transition: all 0.5s ease-in-out;
 }
+
+

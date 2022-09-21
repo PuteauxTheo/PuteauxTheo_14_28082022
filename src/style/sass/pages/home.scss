@@ -119,3 +119,11 @@
         color: #000;
     }
 }
+
+.ReactModal__Content{
+    inset: 15% 40% 50% 40%;
+}
+
+.ReactModal__Overlay{
+    z-index: 10;
+}

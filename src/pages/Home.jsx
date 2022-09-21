@@ -171,7 +171,8 @@ export default function Home() {
                     
                 </form>
             </div>
-            <ReactModal
+            <ReactModal 
+                style={{display:"block", zIndex:10}}
                 isOpen={open}
                 contentLabel="Employee Created !"
                 onRequestClose={closeModal}>

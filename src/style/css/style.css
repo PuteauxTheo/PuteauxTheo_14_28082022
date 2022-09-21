@@ -153,9 +153,23 @@ a {
   color: #000;
 }
 
+.ReactModal__Content {
+  inset: 15% 40% 50% 40%;
+}
+
+.ReactModal__Overlay {
+  z-index: 10;
+}
+
 .employee {
   max-width: 1200px;
   margin: auto;
+}
+.employee .container h1 {
+  font-family: "Riffic Free Bold";
+  letter-spacing: 2px;
+  font-size: 32px;
+  color: rgb(102, 139, 0);
 }
 
 .link-employeeList {
