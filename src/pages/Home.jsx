@@ -80,7 +80,6 @@ export default function Home() {
         if(submit){
 
             if(localStorage.getItem("Employees") === null){
-                console.log(" Je suis pas ici ")
                 localStorage.setItem("Employees", JSON.stringify([]) )
             }
 
@@ -177,7 +176,7 @@ export default function Home() {
                 contentLabel="Employee Created !"
                 onRequestClose={closeModal}>
                 <div>Employee Created!</div>
-                <button onClick={closeModal}>close</button>
+                <button onClick={closeModal}>Close</button>
             </ReactModal>
         </div>
     )

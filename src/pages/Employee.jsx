@@ -6,7 +6,6 @@ import { exempleLabels } from "../data/data"
 export default function Employee() {
 
     const employees = JSON.parse(localStorage.getItem("Employees"))
-    console.log(" Taille employes"+employees)
 
     return (
         <div className='employee'>

@@ -30,7 +30,6 @@ export function resetForm() {
 export function submitForm(newEmployee) {
     return async (dispatch, getState) => {
         const isFormCorrect = selectEmployee(getState()).isValidForm
-        console.log("isformCorrect ? "+isFormCorrect)
         if(isFormCorrect){
             dispatch(actions.submit(newEmployee))
             return true
