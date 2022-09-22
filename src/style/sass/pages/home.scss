@@ -61,6 +61,7 @@
     border: 2px solid $greenyellow;
     color: white;
     margin: 25px 0;
+    border-radius: 5px;
     .legend{
         padding: 5px;
         background: $green;
@@ -85,6 +86,8 @@
         width: 150px;
         margin: auto;
         height: 25px;
+        border: 2px solid $green;
+        border-radius: 5px;
         
     }
     .last{
@@ -121,7 +124,28 @@
 }
 
 .ReactModal__Content{
-    inset: 15% 40% 50% 40%;
+    width: 200px;
+    height: 100px;
+    margin: auto;
+    div{
+        text-align: center;
+        margin: 15px;
+    }
+    button{
+        background-color: $green;
+        width: 80px;
+        height: 35px;
+        border: 1px solid $greenyellow;
+        border-radius: 5px;
+        color: #fff;
+        margin: auto 60px;
+    }
+    button:hover{
+        background-color: $greenyellow;
+        border: 1px solid $green;
+        transition: all 0.5s ease-in-out;
+        color: #000;
+    }
 }
 
 .ReactModal__Overlay{

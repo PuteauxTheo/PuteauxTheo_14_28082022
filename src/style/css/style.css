@@ -99,6 +99,7 @@ a {
   border: 2px solid rgb(137, 180, 0);
   color: white;
   margin: 25px 0;
+  border-radius: 5px;
 }
 .address .legend {
   padding: 5px;
@@ -123,6 +124,8 @@ a {
   width: 150px;
   margin: auto;
   height: 25px;
+  border: 2px solid rgb(102, 139, 0);
+  border-radius: 5px;
 }
 .input-employee-form .last {
   margin-bottom: 20px;
@@ -154,7 +157,28 @@ a {
 }
 
 .ReactModal__Content {
-  inset: 15% 40% 50% 40%;
+  width: 200px;
+  height: 100px;
+  margin: auto;
+}
+.ReactModal__Content div {
+  text-align: center;
+  margin: 15px;
+}
+.ReactModal__Content button {
+  background-color: rgb(102, 139, 0);
+  width: 80px;
+  height: 35px;
+  border: 1px solid rgb(137, 180, 0);
+  border-radius: 5px;
+  color: #fff;
+  margin: auto 60px;
+}
+.ReactModal__Content button:hover {
+  background-color: rgb(137, 180, 0);
+  border: 1px solid rgb(102, 139, 0);
+  transition: all 0.5s ease-in-out;
+  color: #000;
 }
 
 .ReactModal__Overlay {
@@ -189,6 +213,15 @@ a {
   background-color: rgb(137, 180, 0);
   border: 1px solid rgb(102, 139, 0);
   transition: all 0.5s ease-in-out;
+}
+
+.pagination-btn {
+  border-radius: 5px;
+  margin: 0px 2px;
+}
+
+.table-cell {
+  border: 1px solid rgba(128, 128, 128, 0.24);
 }
 
 /*# sourceMappingURL=style.css.map */
