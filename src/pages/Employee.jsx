@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom"
 import DataTable from "data-table-react-plugin"
+import { useSelector } from 'react-redux'
+import { selectEmployees } from '../utils/selector';
 import { exempleLabels } from "../data/data"
 
 export default function Employee() {
 
-    const employees = JSON.parse(localStorage.getItem("Employees"))
-
+    const employees = useSelector(selectEmployees).dataEmployee
     return (
         <div className='employee'>
             <div id="employee-div" className="container">

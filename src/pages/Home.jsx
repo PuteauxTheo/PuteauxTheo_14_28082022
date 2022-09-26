@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
-import { useDispatch } from "react-redux";
-import { submitForm, unvalidForm, validForm} from "../features/employee.js"
+import { useDispatch} from "react-redux";
+import { submitForm, unvalidForm, validForm, checkValidForm } from "../features/employee.js"
 import DatePicker from "../components/DatePicker"
 import DropDownMenu from "../components/DropDownMenu"
 import { states } from "../data/states"
@@ -71,23 +71,15 @@ export default function Home() {
         'zipCode': zipCode
     };
 
+
     const saveEmployee = async (e) => {
         e.preventDefault();
         checkForm();
 
-        const submit = await dispatch(submitForm(newEmployee))
+        const submit =  dispatch(checkValidForm())
 
         if(submit){
-
-            if(localStorage.getItem("Employees") === null){
-                localStorage.setItem("Employees", JSON.stringify([]) )
-            }
-
-            const employeesData = JSON.parse(localStorage.getItem("Employees"))
-            employeesData.push(newEmployee)
-            localStorage.setItem("Employees", JSON.stringify(employeesData))
-            
-            
+            dispatch(submitForm(newEmployee))
         }else{
             return false
         }
@@ -98,7 +90,6 @@ export default function Home() {
 
     const checkForm = () => {
         if((firstName === '') || (lastName === '')){
-            console.log("Invalid field ")
             dispatch(unvalidForm())
         }else{
             dispatch(validForm())
